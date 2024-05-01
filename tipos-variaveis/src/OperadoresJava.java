@@ -53,5 +53,45 @@ public class OperadoresJava {
         String resultado1 = a==b ? "verdadeiro" : "falso";
             System.out.println(resultado1);
 
+
+        //Operadores relacionais
+
+        int numero1 = 1;
+        int numero2 = 2;
+        boolean simNao = numero1 == numero2;
+        if (simNao == true){
+            System.out.println("NumeroUm é igual a númeroDois");
+        }
+        if (numero1 >= 1){
+            System.out.println("NumeroUm é maior que 1");
+        }
+        else{
+            System.out.println("NumeroDois é diferente de numeroUm");
+        }
+
+        String nomeUm = "Kaue";
+        String nomeDois = "Kaue";
+        System.out.println(nomeUm == nomeDois);
+        nomeDois = new String ("Siqueira");
+        System.out.println(nomeUm == nomeDois);
+
+        //equaals compara se o conteúdo de dois objetos é igual;
+        System.out.println(nomeUm.equals(nomeDois));
+
+        //Operadores lógicos
+
+        //&& verifica de as duas condições são verdadeiras;
+        //|| verifica se apenas uma das condições é verdadeira;
+
+        boolean condicao1 = true;
+        boolean condicao2 = true;
+        if(condicao1 && (5 > 4)){
+            System.out.println("As duas condições são verdadeiras");
+        }
+        if(condicao1 || condicao2){
+            System.out.println("Uma das condições é verdadeira");
+        }
+        System.out.println("Fim");
+        
     }
 }
