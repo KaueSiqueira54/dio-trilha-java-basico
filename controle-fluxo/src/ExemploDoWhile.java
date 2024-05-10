@@ -11,6 +11,7 @@ public class ExemploDoWhile {
     } while (tocando());
 
       System.out.println("Alô!");
+      System.out.println("alo");
 
     }
     private static boolean tocando(){
