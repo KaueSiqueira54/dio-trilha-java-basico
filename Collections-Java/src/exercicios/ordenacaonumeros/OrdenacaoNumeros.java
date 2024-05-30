@@ -13,19 +13,17 @@ public class OrdenacaoNumeros {
     }
 
     public void adicionarNumero(int numero) {
-        List<Numero> adicionarNumero = new ArrayList();
-        if (!listNumero.isEmpty()) {
-            listNumero.add(new Numero(numero));
-        }
+        List<Numero> adicionarNumero = new ArrayList<>(listNumero);
+        listNumero.add(new Numero(numero));
     }
     public List<Numero> ordenarAscendente() {
-        List<Numero> ordenarAscencendia = new ArrayList<>();
-            Collections.sort(listNumero);
-            return listNumero;
+        List<Numero> ordenarAscencendia = new ArrayList<>(listNumero);
+            Collections.sort(ordenarAscencendia);
+            return ordenarAscencendia;
     }
     public List<Numero> ordenarDescendencia() {
-        List<Numero> ordenarDescendencia = new ArrayList();
-        Collections.reverse(listNumero);
+        List<Numero> ordenarDescendencia = new ArrayList<>(listNumero);
+        Collections.reverseOrder();
         return listNumero;
     }
     public static void main(String[] args) {
@@ -35,5 +33,7 @@ public class OrdenacaoNumeros {
         ordenacaoNumeros.adicionarNumero(7);
         ordenacaoNumeros.adicionarNumero(6);
         
+        System.out.println(ordenacaoNumeros.ordenarAscendente());
+        System.out.println(ordenacaoNumeros.ordenarDescendencia());
     }
 }

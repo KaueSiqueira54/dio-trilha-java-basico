@@ -14,7 +14,7 @@ public class Numero implements Comparable<Numero>{
 
     @Override
     public int compareTo(Numero n) {
-        return Integer.compare(numero, numero);
+        return 0;
     }
-    
+
 }
