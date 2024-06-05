@@ -11,9 +11,13 @@ public class DesafioCinco {
 
         BinaryOperator<Integer> somar = (num1, num2) -> num1 + num2;
 
-        List<Integer> media = numeros.stream()
+        List<Integer> maiorCinco = numeros.stream()
         .filter(n -> (n > 5))
         .toList();
         
+        int media = maiorCinco.stream()
+        .reduce(0, somar);
+
+        System.out.println(maiorCinco);
     }
 }
