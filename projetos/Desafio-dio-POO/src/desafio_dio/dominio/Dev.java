@@ -1,6 +1,7 @@
 package desafio_dio.dominio;
 
 import java.util.LinkedHashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class Dev {
@@ -10,13 +11,22 @@ public class Dev {
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
-         
+         this.conteudosIscritos.addAll(bootcamp.getConteudos());
+         bootcamp.getDevsInscritos().add(this);
     }
     public void progresso() {
-
+        Optional<Conteudo> conteudo = this.conteudosIscritos.stream().findFirst();
+        if (conteudo.isPresent()) {
+            this.conteudosConcluidos.add(conteudo.get());
+            this.conteudosIscritos.remove(conteudo.get());
+        } else {
+            System.err.println("Você não está inscrito em nenhum conteúdo");
+        }
     }
-    public void calcularTotalXp() {
-
+    public double calcularTotalXp() {
+        return this.conteudosConcluidos.stream()
+            .mapToDouble(Conteudo::calcularXP)
+            .sum();
     }
     public String getNome() {
         return nome;
@@ -36,7 +46,7 @@ public class Dev {
     public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
         this.conteudosConcluidos = conteudosConcluidos;
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
