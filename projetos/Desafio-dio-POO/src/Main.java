@@ -1,4 +1,4 @@
-
+import desafio_dio.dominio.Conteudo;
 import desafio_dio.dominio.Curso;
 import desafio_dio.dominio.Mentoria;
 import java.time.LocalDate;
@@ -24,6 +24,8 @@ public class Main {
         mentoria.setDescricao("Aprendendo básico de java");
         mentoria.setDate(LocalDate.now());
 
+        Conteudo conteudo = new Curso();
+        
         System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria);
