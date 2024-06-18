@@ -1,4 +1,4 @@
-package dio;
+package singleton;
 
 //Testes relacionados ao Design Pattern Singleton
 

@@ -1,4 +1,4 @@
-package dio;
+package singleton;
 
 //Singleton "Lazy Holder"
 
