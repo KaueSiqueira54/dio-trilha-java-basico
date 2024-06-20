@@ -7,4 +7,6 @@ import me.dio.santander_bootcamp_dev_week.dominio.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
+    boolean existsByAccountNumber(String accountNumber);
+    
 }
